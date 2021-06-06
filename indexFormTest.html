@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styleFormTest.css">
+</head>
+<body>
+<div id="container">
+<h3>First name</h3>
+<input type="text" name="fld1" required>
+
+<h3>Last name</h3>
+<input type="text" name="fld2" required  onsubmit="return validateForm()">
+<script>
+  function validateForm()
+  {
+  var x=document.forms["myForm"]["fname"].value;
+  if (x==null || x=="")
+    {
+    alert("Необходимо заполнить поле Имя!");
+    return false;
+    }
+  }
+</script>
+
+<h3>dateOfBirth:</h3>
+<script src="scriptDateOfBorn.js" type="text/javascript"></script>
+<form action="">
+<input type="text" value="dd-mm-yy" onfocus="this.select();_Calendar.lcs(this)"
+onclick="event.cancelBubble=true;this.select();_Calendar.lcs(this)"
+</form>
+
+<h3>Framework</h3>
+<select id="farameworkes">
+<option value="angular">Angular</option>
+<option value="react" selected>React</option>
+</select>
+<script>
+// 1)
+let selectedOption = farameworkes.options[farameworkes.selectedIndex];
+// 2)
+let newOption = new Option("Vue", "React", "Angular");
+farameworkes.append(newOption);
+// 3)
+newOption.selected = true;
+</script>
+
+<h3> E-mail</h3>
+<script src="scriptEmail.js"></script>
+<form>
+<input type="email" id="mail" name="mail" value="">
+<button>Submit</button>
+</form>
+
+<h3>Hobby</h3>
+<select id="hobby">
+<option value="sport">Sport</option>
+<option value="music" selected>Music</option>
+</select>
+<script>
+// 1)
+let selectedOption = hobby.options[hobby.selectedIndex];
+// 2)
+let newOption = new Option("Vue", "React", "Angular");
+hobby.append(newOption);
+// 3)
+newOption.selected = true;
+</script>
+
+
+</div>
+</body>
+</html>
